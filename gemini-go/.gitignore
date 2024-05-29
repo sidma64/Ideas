@@ -1,0 +1,4 @@
+build/
+gemini-go
+.env
+tmp/
