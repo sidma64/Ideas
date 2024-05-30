@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/charmbracelet/bubbles/textinput"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/google/generative-ai-go/genai"
 	"github.com/joho/godotenv"
@@ -12,12 +13,13 @@ import (
 )
 
 type model struct {
-	text   string
-	gemini genai.GenerativeModel
-	cursor int
-	width int
-	height int
+	text    string
+	gemini  genai.GenerativeModel
+	cursor  int
+	width   int
+	height  int
 	lastKey string
+	textField textinput.Model
 }
 
 func initialModel(ctx context.Context) model {
